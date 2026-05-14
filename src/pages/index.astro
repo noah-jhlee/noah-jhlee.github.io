@@ -8,103 +8,215 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Noah's Portfolio</title>
+    <title>NOAH — Portfolio</title>
   </head>
   <body>
-    <main>
+    <div class="wrap">
+
       <header>
-        <h1>Noah's Portfolio</h1>
-        <p class="subtitle">Welcome to my personal homepage</p>
+        <div class="header-top">
+          <span class="site-label">PORTFOLIO</span>
+          <span class="year">2025</span>
+        </div>
+        <div class="divider"></div>
+        <h1>NOAH</h1>
+        <div class="divider"></div>
+        <p class="tagline">Graphic Designer&nbsp;&nbsp;·&nbsp;&nbsp;Apple Developer Academy @ POSTECH</p>
       </header>
 
       <nav>
-        <a href="/" class="active">Home</a>
-        <a href="/about" class="disabled">About</a>
-        <a href="/projects" class="disabled">Projects</a>
-        <a href="/posts" class="disabled">Posts</a>
+        <a href="/" class="active">HOME</a>
+        <a href="/about" class="dim">ABOUT</a>
+        <a href="/projects" class="dim">PROJECTS</a>
+        <a href="/posts" class="dim">POSTS</a>
       </nav>
 
-      <section class="intro">
-        <p>안녕하세요! 이곳은 Noah의 개인 포트폴리오 사이트입니다.</p>
-        <p>곧 About, Projects, Posts 페이지가 추가될 예정이에요.</p>
-      </section>
-    </main>
+      <main>
+        <div class="divider"></div>
+
+        <div class="section-row">
+          <div class="section-index">01</div>
+          <div class="section-body">
+            <h2>ABOUT</h2>
+            <p>그래픽 디자인과 iOS 개발을 함께 탐구하고 있습니다.<br />이 사이트는 제 작업과 생각을 기록하는 공간입니다.</p>
+          </div>
+          <div class="section-status">Soon</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-row">
+          <div class="section-index">02</div>
+          <div class="section-body">
+            <h2>PROJECTS</h2>
+            <p>디자인 프로젝트와 개발 작업을 소개합니다.</p>
+          </div>
+          <div class="section-status">Soon</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-row">
+          <div class="section-index">03</div>
+          <div class="section-body">
+            <h2>POSTS</h2>
+            <p>배우고 경험한 것들을 기록합니다.</p>
+          </div>
+          <div class="section-status">Soon</div>
+        </div>
+
+        <div class="divider"></div>
+      </main>
+
+      <footer>
+        <span>© 2025 NOAH</span>
+        <span>Built with Astro</span>
+      </footer>
+
+    </div>
   </body>
 </html>
 
 <style>
-  * {
+  *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #f9f9f9;
-    color: #222;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 60px 24px;
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", -apple-system,
+      BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background: #ffffff;
+    color: #111111;
+    -webkit-font-smoothing: antialiased;
   }
 
-  main {
-    max-width: 640px;
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 60px 48px 100px;
+  }
+
+  /* Divider */
+  .divider {
     width: 100%;
+    height: 1px;
+    background: #111;
   }
 
+  /* Header */
   header {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+  }
+
+  .site-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #111;
+  }
+
+  .year {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #999;
   }
 
   h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: clamp(5rem, 18vw, 12rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    padding: 24px 0 20px;
   }
 
-  .subtitle {
-    margin-top: 8px;
+  .tagline {
+    padding: 16px 0 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     color: #666;
-    font-size: 1rem;
+    text-transform: uppercase;
   }
 
+  /* Nav */
   nav {
     display: flex;
-    gap: 16px;
-    margin-bottom: 48px;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 16px;
+    gap: 32px;
+    margin-bottom: 64px;
   }
 
   nav a {
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #888;
-    padding: 4px 0;
-  }
-
-  nav a.active {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     color: #111;
-    border-bottom: 2px solid #111;
   }
 
-  nav a.disabled {
+  nav a.dim {
+    color: #bbb;
     pointer-events: none;
-    opacity: 0.4;
   }
 
-  .intro {
+  /* Sections */
+  .section-row {
+    display: grid;
+    grid-template-columns: 48px 1fr 64px;
+    align-items: start;
+    padding: 40px 0;
+    gap: 24px;
+  }
+
+  .section-index {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #bbb;
+    letter-spacing: 0.05em;
+    padding-top: 4px;
+  }
+
+  .section-body h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .section-body p {
+    font-size: 0.88rem;
+    color: #777;
+    line-height: 1.8;
+  }
+
+  .section-status {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #bbb;
+    text-transform: uppercase;
+    text-align: right;
+    padding-top: 6px;
+  }
+
+  /* Footer */
+  footer {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .intro p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #444;
+    justify-content: space-between;
+    margin-top: 80px;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #bbb;
+    text-transform: uppercase;
   }
 </style>
